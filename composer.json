@@ -5,6 +5,8 @@
     "keywords": ["tree"],
     "homepage": "https://github.com/lmxdawn/think-tree",
     "license": "Apache-2.0",
+    "minimum-stability": "stable",
+    "version": "1.0.0",
     "authors": [
         {
             "name": "Lan Ming Xiang",
