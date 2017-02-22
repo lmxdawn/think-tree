@@ -77,11 +77,12 @@ class Tree
     /**
      * 创建树形结构
      * @param array $list
-     * @return object|static
+     * @param array $options
+     * @return Tree|object
      */
-    public static function build(array $list = [])
+    public static function build(array $list = [],array $options = [])
     {
-        self::getInstance()->buildTree($list);
+        self::getInstance($options)->buildTree($list);
 
         return self::getInstance();
     }
