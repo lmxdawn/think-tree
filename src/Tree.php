@@ -130,6 +130,31 @@ class Tree
     }
 
     /**
+     * 获取树的多维数组
+     * @param array $array
+     * @param int $pid
+     * @param int $level
+     * @param int $maxLevel
+     * @return array
+     */
+    public function getMerge($array = [], $pid = 0, $level = 1, $maxLevel = 3){
+        $list = [];
+
+        if ($level <= $maxLevel){
+
+            foreach ($array as $v) {
+                if ($v[$this->_config['parent']] == $pid) {
+                    $v['level'] = $level;
+                    $v[$this->_config['child']] = $this->getMerge($array, $v['id'], $level + 1, $maxLevel);
+                    $list[]     = $v;
+                }
+            }
+        }
+
+        return $list;
+    }
+
+    /**
      * 获取整个树
      * @return array
      */
